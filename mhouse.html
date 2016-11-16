@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "circle",
+        "author": "Brian Egan",
+        "sceneFadeDuration": 1000
+    },
+	
+
+    "scenes": {
+        "circle": {
+            "title": "Back Of My House",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "./IMG1.jpg",
+			"compass": true,
+			"northOffset": 247.5,
+			"autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Back of House",
+                    "sceneId": "house"
+                },
+				
+				    {
+            "pitch": -9.4,
+            "yaw": 222.6,
+            "type": "info",
+            "text": "Link To GMIT",
+            "URL": "http://www.gmit.ie/"
+        },
+            ]
+        },
+
+        "house": {
+            "title": "My Back Yard",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "./IMG2.jpg",
+			"compass": true,
+			"northOffset": 247.5,
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Back Yard",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+				
+				   {
+            "pitch": -9.4,
+            "yaw": 222.6,
+            "type": "info",
+            "text": "This can be used to explain parts of the college",
+            
+        },
+				
+            ]
+
+        }
+
+    }
+	
+
+	
+});
+
+
+
+</script>
+
+</body>
+</html>
